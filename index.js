@@ -1,8 +1,9 @@
 const express = require("express");
+require("dotenv").config();
 
 const router = require("./routers/client/index.route");
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 app.set("views", "./views");
 app.set("view engine", "pug");
 
@@ -13,4 +14,3 @@ app.listen(port, ()=>{
     console.log(`app listen at prot ${port}`);
 })
 
-module.exports = router;
